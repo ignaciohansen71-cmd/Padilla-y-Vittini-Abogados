@@ -1,0 +1,98 @@
+<header class="site-header sticky-top">
+  <nav class="navbar navbar-expand-lg" aria-label="Navegacion principal">
+    <div class="container">
+      <a
+        class="navbar-brand"
+        routerLink="/"
+        fragment="inicio"
+        aria-label="Padilla y Vittini Abogados - Inicio"
+      >
+        <img src="images/logo-horizontal.jpeg" alt="Padilla y Vittini Abogados" />
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Abrir menu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          @for (item of navigation; track item.fragment) {
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/" [fragment]="item.fragment">{{ item.label }}</a>
+            </li>
+          }
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-primary" routerLink="/" fragment="contactanos">Agenda una consulta</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <app-inicio />
+  <app-servicios />
+  <app-quienes-somos />
+  <app-contactanos />
+</main>
+
+<footer class="site-footer">
+  <div class="container py-5">
+    <div class="row gy-4 align-items-start">
+      <div class="col-12 col-lg-5">
+        <img
+          class="footer-logo"
+          src="images/logo-horizontal.jpeg"
+          alt="Padilla y Vittini Abogados"
+        />
+        <p class="footer-copy mt-3 mb-0">
+          Asesoria juridica clara, responsable y cercana para personas y empresas.
+        </p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h2 class="footer-title">Navegacion</h2>
+        <ul class="list-unstyled footer-links mb-0">
+          @for (item of navigation; track item.fragment) {
+            <li>
+              <a routerLink="/" [fragment]="item.fragment">{{ item.label }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+      <div class="col-6 col-lg-4">
+        <h2 class="footer-title">Contacto</h2>
+        <ul class="list-unstyled footer-links mb-0">
+          <li><a href="tel:+56900000000">+56 9 0000 0000</a></li>
+          <li><a href="mailto:contacto@padillayvittini.cl">contacto@padillayvittini.cl</a></li>
+          <li>Santiago, Chile</li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="footer-bottom mt-5 pt-4 d-flex flex-column flex-md-row justify-content-between gap-2"
+    >
+      <span>&copy; {{ currentYear }} Padilla y Vittini Abogados.</span>
+      <span>Atencion confidencial y personalizada.</span>
+    </div>
+  </div>
+</footer>
+
+<a
+  class="whatsapp-button"
+  href="https://wa.me/56900000000"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contactar por WhatsApp"
+  title="Contactar por WhatsApp"
+>
+  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+</a>

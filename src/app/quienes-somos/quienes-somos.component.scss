@@ -1,0 +1,55 @@
+.about {
+  background: var(--color-surface);
+}
+
+.about-mark {
+  width: 100%;
+  aspect-ratio: 4 / 4.4;
+  overflow: hidden;
+  background: var(--color-logo-background);
+}
+
+.about-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about h2 {
+  max-width: 17ch;
+}
+
+.about-lead {
+  margin-top: 1.5rem;
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+
+.about p:not(.section-kicker):not(.about-lead) {
+  color: var(--color-ink-muted);
+  line-height: 1.75;
+}
+
+.values {
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 1.5rem;
+}
+
+.values i {
+  color: var(--color-accent-strong);
+  font-size: 1.35rem;
+}
+
+.values h3 {
+  margin: 0.6rem 0 0.35rem;
+  color: var(--color-primary-deep);
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.values p {
+  margin: 0;
+  font-size: 0.92rem;
+}

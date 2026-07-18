@@ -1,0 +1,109 @@
+.contact {
+  background: var(--color-background);
+}
+
+.contact-layout {
+  box-shadow: var(--shadow-section);
+}
+
+.contact-info {
+  padding: clamp(2.25rem, 5vw, 4rem);
+  background: var(--color-primary-deep);
+  color: var(--color-on-dark-muted);
+}
+
+.contact-info h2 {
+  color: var(--color-white);
+  font-size: clamp(2.25rem, 5vw, 3.6rem);
+}
+
+.contact-info > p:not(.section-kicker) {
+  margin: 1.5rem 0 0;
+  line-height: 1.7;
+}
+
+.contact-methods {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.contact-methods a,
+.contact-methods > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.contact-methods i {
+  display: grid;
+  flex: 0 0 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--color-on-dark-border);
+  color: var(--color-accent);
+}
+
+.contact-methods small {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--color-on-dark-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.contact-form-wrap {
+  display: grid;
+  min-height: 37rem;
+  padding: clamp(2.25rem, 5vw, 4rem);
+  place-items: center stretch;
+  background: var(--color-surface);
+}
+
+.form-label {
+  color: var(--color-primary-deep);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.form-control,
+.form-select {
+  min-height: 3.25rem;
+  border-color: var(--color-border-strong);
+  border-radius: var(--radius-control);
+  background-color: var(--color-surface);
+}
+
+textarea.form-control {
+  min-height: 8.5rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-accent-strong);
+  box-shadow: 0 0 0 0.2rem var(--color-focus-ring);
+}
+
+.privacy-note {
+  max-width: 18rem;
+  color: var(--color-ink-soft);
+}
+
+.success-message {
+  text-align: center;
+}
+
+.success-message > i {
+  color: var(--color-accent-strong);
+  font-size: 3rem;
+}
+
+.success-message h3 {
+  margin-top: 1rem;
+  color: var(--color-primary-deep);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+}

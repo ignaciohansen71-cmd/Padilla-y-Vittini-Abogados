@@ -1,0 +1,33 @@
+<section id="servicios" class="services section-anchor section-space">
+  <div class="container">
+    <div class="section-heading row align-items-end gy-3 mb-5">
+      <div class="col-12 col-lg-7">
+        <p class="section-kicker">Areas de practica</p>
+        <h2>Soluciones juridicas pensadas para cada desafio</h2>
+      </div>
+      <div class="col-12 col-lg-5">
+        <p class="section-intro mb-0">
+          Abordamos cada asunto con rigor tecnico, vision practica y comunicacion permanente.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-0 service-grid">
+      @for (service of services; track service.title; let index = $index) {
+        <article class="col-12 col-md-6 col-lg-4 service-item">
+          <span class="service-index">0{{ index + 1 }}</span>
+          <i class="bi {{ service.icon }} service-icon" aria-hidden="true"></i>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.text }}</p>
+          <a
+            routerLink="/"
+            fragment="contactanos"
+            [attr.aria-label]="'Consultar por ' + service.title"
+          >
+            Consultar <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,132 @@
+:root {
+  /* Brand palette: change these values to retheme the complete site. */
+  --color-primary-deep: #032d4f;
+  --color-primary: #07547b;
+  --color-primary-hover: #043f60;
+  --color-accent: #57badc;
+  --color-accent-strong: #168eb9;
+  --color-background: #f3f5f4;
+  --color-surface: #ffffff;
+  --color-surface-accent: #edf8fb;
+  --color-logo-background: #f7f7ef;
+  --color-footer: #021f37;
+  --color-ink: #17242e;
+  --color-ink-muted: #53616b;
+  --color-ink-soft: #75818a;
+  --color-white: #ffffff;
+  --color-border: #dce3e5;
+  --color-border-strong: #cbd5d9;
+  --color-on-dark-muted: #b9c9d3;
+  --color-on-dark-border: rgba(255, 255, 255, 0.18);
+  --color-focus-ring: rgba(22, 142, 185, 0.2);
+  --color-whatsapp: #168f62;
+  --color-whatsapp-hover: #10734e;
+
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: Inter, 'Segoe UI', Arial, sans-serif;
+  --radius-control: 0.25rem;
+  --shadow-section: 0 1.5rem 4rem rgba(3, 45, 79, 0.12);
+  --shadow-floating: 0 0.75rem 2rem rgba(3, 45, 79, 0.25);
+
+  --bs-primary: var(--color-primary);
+  --bs-primary-rgb: 7, 84, 123;
+  --bs-body-color: var(--color-ink);
+  --bs-body-bg: var(--color-background);
+  --bs-border-radius: var(--radius-control);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.section-space {
+  padding: clamp(5rem, 10vw, 8rem) 0;
+}
+
+.section-anchor {
+  scroll-margin-top: 5rem;
+}
+
+.section-kicker {
+  margin: 0 0 1rem;
+  color: var(--color-accent-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.section-kicker-light {
+  color: var(--color-accent);
+}
+
+.section-heading h2,
+.about h2 {
+  margin: 0;
+  color: var(--color-primary-deep);
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  line-height: 1.08;
+}
+
+.btn {
+  --bs-btn-border-radius: var(--radius-control);
+  min-height: 2.9rem;
+  padding: 0.7rem 1.2rem;
+  font-weight: 700;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-bg: var(--color-primary-hover);
+  --bs-btn-hover-border-color: var(--color-primary-hover);
+  --bs-btn-active-bg: var(--color-primary-hover);
+  --bs-btn-active-border-color: var(--color-primary-hover);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-bg: var(--color-primary);
+  --bs-btn-hover-border-color: var(--color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

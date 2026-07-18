@@ -1,0 +1,73 @@
+.services {
+  background: var(--color-background);
+}
+
+.section-heading h2 {
+  max-width: 18ch;
+}
+
+.section-intro {
+  color: var(--color-ink-muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.service-grid {
+  border-top: 1px solid var(--color-border-strong);
+  border-left: 1px solid var(--color-border-strong);
+}
+
+.service-item {
+  position: relative;
+  min-height: 22rem;
+  padding: 2rem;
+  border-right: 1px solid var(--color-border-strong);
+  border-bottom: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.service-item:hover {
+  z-index: 1;
+  background: var(--color-surface-accent);
+  transform: translateY(-3px);
+}
+
+.service-index {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--color-ink-soft);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.service-icon {
+  display: block;
+  margin-bottom: 3rem;
+  color: var(--color-accent-strong);
+  font-size: 2rem;
+}
+
+.service-item h3 {
+  color: var(--color-primary-deep);
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+}
+
+.service-item p {
+  color: var(--color-ink-muted);
+  line-height: 1.65;
+}
+
+.service-item a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+}

@@ -1,0 +1,126 @@
+<section id="contactanos" class="contact section-anchor section-space">
+  <div class="container">
+    <div class="row g-0 contact-layout">
+      <div class="col-12 col-lg-5 contact-info">
+        <p class="section-kicker section-kicker-light">Contactanos</p>
+        <h2>Conversemos sobre tu situacion</h2>
+        <p>
+          Cuéntanos brevemente lo que necesitas. Revisaremos tu mensaje para coordinar una primera
+          conversacion confidencial.
+        </p>
+
+        <div class="contact-methods">
+          <a href="tel:+56900000000">
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            <span><small>Telefono</small>+56 9 0000 0000</span>
+          </a>
+          <a href="mailto:contacto@padillayvittini.cl">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <span><small>Correo</small>contacto@padillayvittini.cl</span>
+          </a>
+          <div>
+            <i class="bi bi-geo-alt" aria-hidden="true"></i>
+            <span><small>Ubicacion</small>Santiago, Chile</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-7 contact-form-wrap">
+        @if (submitted && contactForm.valid) {
+          <div class="success-message" role="status">
+            <i class="bi bi-check-circle" aria-hidden="true"></i>
+            <h3>Mensaje preparado</h3>
+            <p>El formulario esta listo para conectarse al servicio de correo que definamos.</p>
+            <button class="btn btn-outline-primary" type="button" (click)="submitted = false">
+              Volver al formulario
+            </button>
+          </div>
+        } @else {
+          <form [formGroup]="contactForm" (ngSubmit)="submit()" novalidate>
+            <div class="row g-4">
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="name">Nombre</label>
+                <input
+                  class="form-control"
+                  [class.is-invalid]="
+                    contactForm.controls.name.touched && contactForm.controls.name.invalid
+                  "
+                  id="name"
+                  formControlName="name"
+                  autocomplete="name"
+                />
+                <div class="invalid-feedback">Ingresa tu nombre.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="email">Correo</label>
+                <input
+                  class="form-control"
+                  [class.is-invalid]="
+                    contactForm.controls.email.touched && contactForm.controls.email.invalid
+                  "
+                  id="email"
+                  type="email"
+                  formControlName="email"
+                  autocomplete="email"
+                />
+                <div class="invalid-feedback">Ingresa un correo valido.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="phone">Telefono</label>
+                <input
+                  class="form-control"
+                  id="phone"
+                  type="tel"
+                  formControlName="phone"
+                  autocomplete="tel"
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="service">Area de consulta</label>
+                <select
+                  class="form-select"
+                  [class.is-invalid]="
+                    contactForm.controls.service.touched && contactForm.controls.service.invalid
+                  "
+                  id="service"
+                  formControlName="service"
+                >
+                  <option value="" disabled>Selecciona una opcion</option>
+                  <option>Derecho civil</option>
+                  <option>Derecho corporativo</option>
+                  <option>Derecho laboral</option>
+                  <option>Familia y patrimonio</option>
+                  <option>Contratos</option>
+                  <option>Litigios</option>
+                </select>
+                <div class="invalid-feedback">Selecciona un area.</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="message">Mensaje</label>
+                <textarea
+                  class="form-control"
+                  [class.is-invalid]="
+                    contactForm.controls.message.touched && contactForm.controls.message.invalid
+                  "
+                  id="message"
+                  rows="5"
+                  formControlName="message"
+                ></textarea>
+                <div class="invalid-feedback">Describe brevemente tu consulta.</div>
+              </div>
+              <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+                <button class="btn btn-primary btn-lg" type="submit">
+                  Enviar consulta <i class="bi bi-send ms-2" aria-hidden="true"></i>
+                </button>
+                <small class="privacy-note"
+                  ><i class="bi bi-lock me-1" aria-hidden="true"></i> Tu informacion sera tratada de
+                  forma confidencial.</small
+                >
+              </div>
+            </div>
+          </form>
+        }
+      </div>
+    </div>
+  </div>
+</section>
