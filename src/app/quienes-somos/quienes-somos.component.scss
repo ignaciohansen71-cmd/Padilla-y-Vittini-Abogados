@@ -6,10 +6,12 @@
   width: 100%;
   aspect-ratio: 4 / 4.4;
   overflow: hidden;
+  border-radius: var(--radius-image);
   background: var(--color-logo-background);
 }
 
 .about-mark img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;

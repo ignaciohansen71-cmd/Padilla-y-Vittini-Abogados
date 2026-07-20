@@ -17,6 +17,7 @@
   display: block;
   width: min(20rem, 55vw);
   height: auto;
+  border-radius: var(--radius-image);
 }
 
 .navbar-brand img {
