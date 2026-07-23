@@ -1,0 +1,6 @@
+@PadillaVittini.Api_HostAddress = http://localhost:5067
+
+GET {{PadillaVittini.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

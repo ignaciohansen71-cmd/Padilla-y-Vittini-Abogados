@@ -1,59 +1,63 @@
 # Padilla y Vittini Abogados
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.6.
+Proyecto organizado como un repositorio con frontend y backend independientes:
 
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
+```text
+front/    Angular 22, Bootstrap y Vitest
+backend/  ASP.NET Core 10 y MailKit
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Desarrollo local
 
-## Code scaffolding
+Instala las dependencias del frontend:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```powershell
+cd front
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Configura la contrasena de aplicacion de Google Workspace desde la raiz del repositorio. El secreto
+se almacena fuera del proyecto y nunca debe incluirse en Git:
 
-```bash
-ng generate --help
+```powershell
+dotnet user-secrets set "Email:Password" "TU_PASSWORD_DE_APLICACION" --project backend/PadillaVittini.Api
 ```
 
-## Building
+Inicia la API desde una terminal en la raiz:
 
-To build the project run:
-
-```bash
-ng build
+```powershell
+dotnet run --project backend/PadillaVittini.Api
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Inicia Angular desde otra terminal:
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
+```powershell
+cd front
+npm start
 ```
 
-## Running end-to-end tests
+La aplicacion estara disponible en `http://localhost:4200` y la API en
+`http://localhost:5067`. El proxy de Angular reenvia automaticamente las solicitudes `/api` al
+backend durante el desarrollo.
 
-For end-to-end (e2e) testing, run:
+## Verificacion
 
-```bash
-ng e2e
+Frontend:
+
+```powershell
+cd front
+npm test -- --watch=false
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Backend:
 
-## Additional Resources
+```powershell
+dotnet build backend/PadillaVittini.Api --configuration Release
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Produccion
+
+El frontend puede publicarse como sitio estatico. El backend necesita un alojamiento compatible
+con ASP.NET Core 10. Configura la contrasena SMTP mediante la variable de entorno
+`Email__Password`; no agregues secretos a `appsettings.json`.

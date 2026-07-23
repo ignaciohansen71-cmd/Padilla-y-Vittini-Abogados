@@ -12,7 +12,7 @@ export class ServiciosComponent {
     {
       icon: 'bi-briefcase',
       title: 'Derecho civil',
-      text: 'Contratos, obligaciones, indemnizaciones y solucion de controversias entre personas y empresas.',
+      text: 'Contratos, obligaciones, indemnizaciones y solucion de controversias entre personas y empresas. Cobranza Judicial',
     },
     {
       icon: 'bi-building',
@@ -31,8 +31,8 @@ export class ServiciosComponent {
     },
     {
       icon: 'bi-file-earmark-check',
-      title: 'Contratos',
-      text: 'Redaccion, revision y negociacion de acuerdos claros que protejan tus intereses.',
+      title: 'Implementación de Ley de Protección de Datos',
+      text: 'Colaboramos con tu empresa para alcanzar el cumplimiento normativo de la Ley 21.719.',
     },
     {
       icon: 'bi-bank',

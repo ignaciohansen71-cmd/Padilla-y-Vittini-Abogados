@@ -14,9 +14,9 @@
             <i class="bi bi-telephone" aria-hidden="true"></i>
             <span><small>Telefono</small>+56 9 4344 3538</span>
           </a>
-          <a href="mailto:contacto@padillayvittini.cl">
+          <a href="mailto:consultas@padillavittiniabogados.cl">
             <i class="bi bi-envelope" aria-hidden="true"></i>
-            <span><small>Correo</small>contacto@padillayvittini.cl</span>
+            <span><small>Correo</small>consultas@padillavittiniabogados.cl</span>
           </a>
           <div>
             <i class="bi bi-geo-alt" aria-hidden="true"></i>
@@ -26,17 +26,25 @@
       </div>
 
       <div class="col-12 col-lg-7 contact-form-wrap">
-        @if (submitted && contactForm.valid) {
+        @if (submissionState() === 'success') {
           <div class="success-message" role="status">
             <i class="bi bi-check-circle" aria-hidden="true"></i>
-            <h3>Mensaje preparado</h3>
-            <p>El formulario esta listo para conectarse al servicio de correo que definamos.</p>
-            <button class="btn btn-outline-primary" type="button" (click)="submitted = false">
-              Volver al formulario
+            <h3>Mensaje enviado</h3>
+            <p>Recibimos tu consulta. Nos pondremos en contacto contigo a la brevedad.</p>
+            <button class="btn btn-outline-primary" type="button" (click)="resetForm()">
+              Enviar otra consulta
             </button>
           </div>
         } @else {
           <form [formGroup]="contactForm" (ngSubmit)="submit()" novalidate>
+            <input
+              class="contact-honeypot"
+              type="text"
+              formControlName="website"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
             <div class="row g-4">
               <div class="col-12 col-md-6">
                 <label class="form-label" for="name">Nombre</label>
@@ -109,14 +117,28 @@
                 <div class="invalid-feedback">Describe brevemente tu consulta.</div>
               </div>
               <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center gap-3">
-                <button class="btn btn-primary btn-lg" type="submit">
-                  Enviar consulta <i class="bi bi-send ms-2" aria-hidden="true"></i>
+                <button
+                  class="btn btn-primary btn-lg"
+                  type="submit"
+                  [disabled]="submissionState() === 'sending'"
+                >
+                  @if (submissionState() === 'sending') {
+                    <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+                    Enviando
+                  } @else {
+                    Enviar consulta <i class="bi bi-send ms-2" aria-hidden="true"></i>
+                  }
                 </button>
                 <small class="privacy-note"
                   ><i class="bi bi-lock me-1" aria-hidden="true"></i> Tu informacion sera tratada de
                   forma confidencial.</small
                 >
               </div>
+              @if (submissionState() === 'error') {
+                <div class="col-12">
+                  <div class="alert alert-danger mb-0" role="alert">{{ errorMessage() }}</div>
+                </div>
+              }
             </div>
           </form>
         }

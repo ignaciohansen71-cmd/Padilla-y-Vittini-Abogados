@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/backend/">
+    <Project Path="backend/PadillaVittini.Api/PadillaVittini.Api.csproj" />
+  </Folder>
+</Solution>
